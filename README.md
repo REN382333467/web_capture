@@ -87,13 +87,19 @@ public class web_capture {
 	    
 	    //显示
 	    String hour = "      ";
+	    String weather = "abc";
 	    for(int i=0;i<hours_1.size();i++){	
-	    	hour = hours_1.get(i);
+	    	hour = hours_1.get(i); 		    	
 	    	hour = hour.substring(hour.indexOf(":")+1, hour.indexOf(":")+3);
 	    	int xxx = Integer.parseInt(hour);
-	    	if (xxx == 53){
-	    		System.out.print(hours_1.get(i)+";");	
-			    System.out.println(weather_1.get(i));
+	    	if (xxx == 53){    //判断是否为**：**：53
+	    		System.out.print(hours_1.get(i)+";");			    
+			    weather = weather_1.get(i).substring(0, 3);
+			    if (weather.equals("Fog") ){
+			    	System.out.println("Fog");
+		    	}else{
+		    		System.out.println(weather_1.get(i));
+		    	}
 	    	}	    		  
 	    }
 	    	    
